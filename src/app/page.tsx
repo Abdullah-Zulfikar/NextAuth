@@ -1,6 +1,6 @@
 "use client"
 
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 
 
@@ -13,6 +13,7 @@ export default function Home() {
         <h1>Welcome Back</h1>
         { JSON.stringify(session)}
         {session.user?.email}
+        <button onClick={()=>signOut()}>Logout</button>
       </>
 
     ) : (
